@@ -1,0 +1,26 @@
+<ion-content [fullscreen]="true" id="container">
+    <img src="/assets/imp.PNG" alt="logo">
+  <form>
+  <div>
+    <label>ID</label>
+    <input type="text" id="login" [(ngModel)]="id" readonly [ngModelOptions]="{standalone: true}">
+  </div>
+  <div>
+      <label>Nom</label>
+      <input type="text" [(ngModel)]="nom"  [ngModelOptions]="{standalone: true}">
+  </div>
+  <div>
+      <label>Prénom</label>
+      <input type="text" [(ngModel)]="prenom" [ngModelOptions]="{standalone: true}" >
+  </div>
+  <div>
+      <label>Filière</label>
+      <input type="text" [(ngModel)]="filiere"  [ngModelOptions]="{standalone: true}">
+  </div>
+    <div>
+        <ion-button color="success" (click)="updateItem()" [routerLink]="['/affichage']">Update</ion-button>
+       
+    </div>
+  </form>
+</ion-content>
+

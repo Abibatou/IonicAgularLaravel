@@ -1,0 +1,21 @@
+<ion-content [fullscreen]="true" id="container">
+    <img src="/assets/imp.PNG" alt="logo">
+  <form>
+  <div>
+      <label>Nom</label>
+      <input type="text" class="Abc"  [(ngModel)]="nom" [ngModelOptions]="{standalone: true}">
+  </div>
+  <div>
+      <label>Prénom</label>
+      <input type="text" id="B" [(ngModel)]="prenom" [ngModelOptions]="{standalone: true}">
+  </div>
+  <div>
+      <label>Filière</label>
+      <input type="text"class="C"  [(ngModel)]="filiere" [ngModelOptions]="{standalone: true}">
+  </div>
+    <div>
+        <ion-button (click)="addItem()" [routerLink]="['/affichage']" color="tertiary">Ajouter</ion-button>  
+    </div>
+  </form>
+</ion-content>
+

@@ -1,0 +1,26 @@
+<ion-content [fullscreen]="true" id="container">
+        <img src="/assets/imp.PNG" alt="logo">
+        <h4>Affichage étudiant</h4>
+        <table>
+          <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Filière</th>
+            <th>Action</th>
+          </tr>
+          <tr *ngFor="let item of items" >
+            
+            <td>{{item.id}}</td>
+            <td>{{item.nom}}</td>
+            <td>{{item.prenom}}</td>
+            <td>{{item.filiere}}</td>
+            <td>
+                <ion-button color="secondary" (click)="editItem(item.id)">Edit</ion-button>
+                <ion-button color="danger" (click)="deleteItem(item.id)">Supprime</ion-button> 
+            </td>
+         
+          </tr>
+        </table>
+        
+</ion-content>

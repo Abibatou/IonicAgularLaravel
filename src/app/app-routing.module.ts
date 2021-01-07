@@ -11,6 +11,22 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'gestion-etudiant',
+    loadChildren: () => import('./gestion-etudiant/gestion-etudiant.module').then( m => m.GestionEtudiantPageModule)
+  },
+  {
+    path: 'affichage',
+    loadChildren: () => import('./affichage/affichage.module').then( m => m.AffichagePageModule)
+  },
+  {
+    path: 'insertion',
+    loadChildren: () => import('./insertion/insertion.module').then( m => m.InsertionPageModule)
+  },
+  {
+    path: 'modification/:id',
+    loadChildren: () => import('./modification/modification.module').then( m => m.ModificationPageModule)
+  },
 ];
 
 @NgModule({

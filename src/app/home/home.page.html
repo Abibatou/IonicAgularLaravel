@@ -1,20 +1,22 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content [fullscreen]="true" id="container">
+    <img src="/assets/imp.PNG" alt="logo">
+  <form [formGroup] = "formdata" >
+  <div class="form-group">
+    <label>Login</label>
+    <input type="email" id="login" formControlName = "email" class="form-control">
+    <div *ngIf="formdata.controls.email.errors && formdata.controls.email.touched" class="error">Votre email est invalide</div>
+      
   </div>
+  <div class="form-group">
+      <label>Mot de passe</label>
+      <input type="password" formControlName = "password" class="form-control" >
+      <div *ngIf="formdata.controls.password.errors && formdata.controls.password.touched" class="error">Saisir un mot de passe valide</div>
+
+    </div>
+    <div>
+        <ion-button color="light">Annuler</ion-button>
+        <ion-button color="light" (click)="onClickSubmit()">Connecter</ion-button>
+    </div>
+  </form>
 </ion-content>

@@ -5,7 +5,7 @@
   <div class="form-group">
     <label>Login</label>
     <input type="email" id="login" formControlName = "email" class="form-control">
-    <div *ngIf="formdata.controls.email.errors && formdata.controls.email.touched" class="error">Votre email est invalide</div>
+   <div *ngIf="formdata.controls.email.errors && formdata.controls.email.touched" class="error">Votre email est invalide</div>
       
   </div>
   <div class="form-group">
@@ -14,6 +14,8 @@
       <div *ngIf="formdata.controls.password.errors && formdata.controls.password.touched" class="error">Saisir un mot de passe valide</div>
 
     </div>
+    <h4>{{data}}</h4>
+    <div [hidden]="!error">dgszdj</div>
     <div>
         <ion-button color="light">Annuler</ion-button>
         <ion-button color="light" (click)="onClickSubmit()">Connecter</ion-button>

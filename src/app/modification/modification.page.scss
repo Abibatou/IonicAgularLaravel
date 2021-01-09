@@ -6,6 +6,10 @@
     top: 50%;
     transform: translateY(-50%);
 }
+h4{
+     margin-bottom: 30px;
+     font-size: 30px;
+ }
 input{
     margin-bottom: 40px;
     margin-left: 30px;
@@ -15,8 +19,15 @@ img{
     margin-bottom: 30px;
 }
 .ion-color-success{
-     margin-right: 30px;
+     margin-left: 80px;
+
 }
 input#login{
      margin-left: 75px;
+}
+input#C{
+     margin-left: 40px;
+}
+input#A{
+     margin-left: 50px;
 }

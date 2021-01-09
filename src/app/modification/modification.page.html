@@ -1,5 +1,6 @@
 <ion-content [fullscreen]="true" id="container">
     <img src="/assets/imp.PNG" alt="logo">
+    <h4>Mise à jour étudiant</h4>
   <form>
   <div>
     <label>ID</label>
@@ -7,17 +8,18 @@
   </div>
   <div>
       <label>Nom</label>
-      <input type="text" [(ngModel)]="nom"  [ngModelOptions]="{standalone: true}">
+      <input type="text" id="A" [(ngModel)]="nom"  [ngModelOptions]="{standalone: true}">
   </div>
   <div>
       <label>Prénom</label>
-      <input type="text" [(ngModel)]="prenom" [ngModelOptions]="{standalone: true}" >
+      <input type="text" id="B" [(ngModel)]="prenom" [ngModelOptions]="{standalone: true}" >
   </div>
   <div>
       <label>Filière</label>
-      <input type="text" [(ngModel)]="filiere"  [ngModelOptions]="{standalone: true}">
+      <input type="text" id="C" [(ngModel)]="filiere"  [ngModelOptions]="{standalone: true}">
   </div>
     <div>
+        <ion-button color="secondary" [routerLink]="['/affichage']">Annuler</ion-button>
         <ion-button color="success" (click)="updateItem()" [routerLink]="['/affichage']">Update</ion-button>
        
     </div>

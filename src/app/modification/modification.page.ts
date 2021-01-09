@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {  ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-modification',
   templateUrl: './modification.page.html',
@@ -16,7 +17,8 @@ export class ModificationPage implements OnInit {
   constructor(
     private location: Location,
     private http: HttpClient,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -48,7 +50,8 @@ export class ModificationPage implements OnInit {
     }
     this.http.put(server_url, data).subscribe((res)=> {
       //console.log('bonjour');
-      this.location.back();
+      //this.location.back();
+      //this.router.navigate(['/affichage']);
     }
     )
   }

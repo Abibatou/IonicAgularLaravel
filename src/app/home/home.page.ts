@@ -2,6 +2,7 @@ import { Component, Injectable} from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -9,21 +10,40 @@ import { FormGroup, FormControl, Validators} from '@angular/forms';
 })
 export class HomePage {
   title = 'angular8restapi';
-   formdata
+   formdata: FormGroup;
+   //data = [];
+   response: string
+   
+   //users = {email: "", password:""}
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) {}
    
-   onClickSubmit(data) {
+   onClickSubmit() {
+    let server_url = 'http://localhost:8000/api/login';
+    this.response = 'Connexion réussie';
+    this.http.post(server_url, this.formdata.value).subscribe(
+      data => {if (this.response==data) {
+        this.router.navigate(["/gestion-etudiant"]);
+      }
+      else{
+        alert('Veuillez réessayer')
+      }
+    },
+      error => console.log(error),
+      
+      
+    );
+    
+    
+    
       if(this.formdata.invalid)
      {
       this.formdata.get('email').markAsTouched();
     this.formdata.get('password').markAsTouched();
     }
-    else
-    {
-      alert("Success");
-  }
+    
   }
   ngOnInit() {
     /*Login form validation*/
@@ -37,18 +57,13 @@ export class HomePage {
     });
 }
 passwordvalidation(formcontrol) {
-    if (formcontrol.value.length < 5) {
+    if (formcontrol.value.length < 6) {
        return {"password" : true};
     }
- }
-
-
+ }   
+ 
   }
   
-
-  
-  
-      /*Login form validation*/
     
    
    

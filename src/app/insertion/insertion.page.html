@@ -1,5 +1,6 @@
 <ion-content [fullscreen]="true" id="container">
     <img src="/assets/imp.PNG" alt="logo">
+    <h4>Insertion étudiant</h4>
   <form>
   <div>
       <label>Nom</label>
@@ -14,6 +15,7 @@
       <input type="text"class="C"  [(ngModel)]="filiere" [ngModelOptions]="{standalone: true}">
   </div>
     <div>
+        <ion-button [routerLink]="['/gestion-etudiant']" color="success">Annuler</ion-button>  
         <ion-button (click)="addItem()" [routerLink]="['/affichage']" color="tertiary">Ajouter</ion-button>  
     </div>
   </form>
